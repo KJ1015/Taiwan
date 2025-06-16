@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="《山林裡的擁抱》文創企劃，一款結合石虎與台灣黑熊故事的雙面療癒抱枕。我們用設計傳遞保育價值，每一次擁抱都是對台灣生態的支持。">
+    
+    <title>《山林裡的擁抱》最終版文創產品企劃書</title>
+    
+    <style>
+        /* --- Google Fonts & CSS 變數 --- */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Merriweather:wght@700&display=swap');
+
+        :root {
+            --primary-color: #2c3e50; /* 深藍灰 */
+            --secondary-color: #34495e; /* 較淺的藍灰 */
+            --accent-color: #e67e22; /* 橘色 (石虎斑點/溫暖) */
+            --background-color: #f7f9f9; /* 更柔和的背景 */
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --font-header: 'Merriweather', serif;
+            --font-body: 'Noto Sans TC', sans-serif;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+            --border-radius: 12px;
+        }
+
+        /* --- 基本與排版 --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 { font-size: clamp(2.2rem, 5vw, 2.8rem); }
+        h2 { font-size: clamp(1.8rem, 4vw, 2.2rem); }
+        h3 { font-size: clamp(1.2rem, 3vw, 1.4rem); }
+
+        /* --- 標題與頁首 --- */
+        header {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center;
+            background-size: cover;
+            color: var(--card-bg);
+            text-align: center;
+            padding: clamp(3rem, 10vw, 5rem) 1.5rem;
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        header h1 {
+            font-family: var(--font-header);
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            opacity: 0.9;
+            margin-top: 10px;
+            max-width: 60ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- 內容區塊 --- */
+        main {
+            display: grid;
+            gap: 30px;
+        }
+
+        article {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        article h2 {
+            font-family: var(--font-header);
+            color: var(--secondary-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        /* --- 卡片與圖片 --- */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--background-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-content {
+            padding: 25px;
+            flex-grow: 1;
+        }
+        
+        .card-content h3 {
+            font-family: var(--font-header);
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        figure {
+            margin: 0;
+            position: relative;
+        }
+
+        figure img, figure source {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        figcaption {
+            font-size: 0.85em;
+            color: #555;
+            text-align: center;
+            padding: 12px;
+            background: #f0f0f0;
+            font-style: italic;
+        }
+
+        /* --- 表格 --- */
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            text-align: left;
+        }
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+            font-weight: 700;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .total-row {
+            font-weight: bold;
+            background-color: var(--accent-color) !important;
+            color: white;
+        }
+
+        /* --- 總結 --- */
+        .summary {
+            background-color: #eaf3f2; /* 淺淺的綠意，呼應自然主題 */
+            border-left: 5px solid #2e8b57; /* 森林綠 */
+            padding: 25px;
+            border-radius: 8px;
+        }
+        .summary p {
+            line-height: 1.9;
+            color: #2F4F4F; /* 深板岩灰 */
+        }
+        .summary p:first-of-type {
+            font-weight: 500;
+        }
+
+        /* --- 頁尾 --- */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #888;
+            border-top: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>《山林裡的擁抱》</h1>
+        <p>一款有故事的療癒抱枕，將台灣山林的溫柔，帶進你的日常。</p>
+    </header>
+
+    <div class="container">
+        <main>
+            <article id="intro-animals">
+                <h2>一、石虎與台灣黑熊：我們的山林瑰寶</h2>
+                <p>本企劃的核心故事，源自台灣這片土地上兩種極具代表性、卻同樣面臨生存危機的珍貴物種——石虎與台灣黑熊。</p>
+                <div class="card-container">
+                    <div class="card">
+                        <figure>
+                            <!-- AI 生成的石虎藝術肖像 -->
+                            <img src="imgur/1.png" alt="一隻眼神清澈、花紋美麗的石虎藝術肖像，背景是朦朧的淺山森林，展現其靈動的生命力。" loading="lazy">
+                        </figure>
+                        <div class="card-content">
+                            <h3>石虎 (Leopard Cat)</h3>
+                            <p><strong>獨特性與故事性：</strong>身為台灣唯一的原生貓科動物，石虎是淺山生態系的頂級掠食者。牠們身上的美麗斑點如同金錢豹，過去被稱為「錢貓」，象徵著財富與幸運。然而，隨著棲地破壞、路殺與農藥毒害，牠們的數量銳減至不到500隻，每一次在黑夜中閃現的身影，都可能是最後的道別。牠的故事，是台灣淺山生態系失落的一角。</p>
+                        </div>
+                        <figcaption>AI 生成藝術肖像：石虎的靈魂</figcaption>
+                    </div>
+
+                    <div class="card">
+                        <figure>
+                            <!-- AI 生成的台灣黑熊藝術肖像 -->
+                            <img src="imgur/2.jpg" alt="一隻雄偉的台灣黑熊藝術肖像，牠佇立在雲霧繚繞的中央山脈中，胸前V形標誌清晰可見，充滿力量與尊嚴。" loading="lazy">
+                        </figure>
+                        <div class="card-content">
+                            <h3>台灣黑熊 (Formosan Black Bear)</h3>
+                            <p><strong>獨特性與故事性：</strong>台灣黑熊是台灣最大型的陸域哺乳動物，胸前的V形白色斑紋是牠最醒目的標誌，如同勝利的勳章。在原住民布農族的傳說中，黑熊是「森林之王」，是勇氣與力量的象徵。牠們是生態健全的指標，但因非法盜獵與棲地破碎化，同樣被列為瀕危物種。牠的故事，是台灣中央山脈的靈魂呼喚。</p>
+                        </div>
+                        <figcaption>AI 生成藝術肖像：山脈的守護者</figcaption>
+                    </div>
+                </div>
+            </article>
+
+            <article id="product-intro">
+                <h2>二、文創產品說明：山林裡的擁抱</h2>
+                <p>我們的產品不只是一個商品，而是一個傳遞故事的媒介。我們將石虎的敏捷與黑熊的溫厚，融合在一個創新的產品中。</p>
+                
+                <!-- AI 生成的產品情境圖 (Lifestyle Shot) -->
+                <figure style="margin-top: 20px;">
+                    <img src="imgur/3.png" alt="一位女子在舒適的沙發上，正滿足地擁抱著我們設計的《山林裡的擁抱》雙面抱枕，枕頭的石虎面朝外，設計精緻。" loading="lazy" style="height:auto; border-radius:var(--border-radius); box-shadow: var(--shadow);">
+                    <figcaption>想像在疲憊的一天後，讓《山林裡的擁抱》為您帶來溫暖與慰藉。(AI 生成情境示意圖)</figcaption>
+                </figure>
+
+                <div class="card-content" style="padding: 20px 0;">
+                    <h3>產品名稱：《山林裡的擁抱》- 石虎與黑熊雙面故事抱枕</h3>
+                    <p><strong>原創性與獨特性：</strong></p>
+                    <div class="card-container">
+                        <!-- AI 生成的產品圖 - 石虎面 -->
+                        <figure class="card">
+                            <img src="imgur/5.png" alt="《山林裡的擁抱》抱枕的石虎面，設計為一隻蜷縮熟睡的石虎，斑點細膩，表情安詳。" style="height: auto;">
+                            <figcaption>抱枕A面：靜謐的石虎</figcaption>
+                        </figure>
+                        <!-- AI 生成的產品圖 - 黑熊面 -->
+                        <figure class="card">
+                            <img src="imgur/4.png" alt="《山林裡的擁抱》抱枕的黑熊面，設計為一隻憨厚沉睡的台灣黑熊，胸前V字標誌十分可愛。" style="height: auto;">
+                            <figcaption>抱枕B面：溫厚的黑熊</figcaption>
+                        </figure>
+                    </div>
+                    <ul style="margin-top: 25px;">
+                        <li><strong>雙面設計：</strong>這不是一個普通的抱枕。它的一面是蜷縮熟睡的「石虎」，另一面則是憨厚沉眠的「台灣黑熊」。透過巧妙的剪裁與設計，讓兩種動物共享同一個溫暖的「家」。</li>
+                        <li><strong>故事性：</strong>翻轉抱枕的動作，象徵著「日夜交替」或「淺山與高山的守護」。擁有這個抱枕，就像同時擁抱了台灣最重要的兩種守護神，提醒我們「共存共榮」的理念。</li>
+                        <li><strong>材質與細節：</strong>採用親膚的短毛絨與環保的再生PP棉填充，觸感療癒。石虎的斑點與黑熊的V形標誌皆以精緻電繡呈現，提升產品質感與收藏價值。</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="cost-analysis">
+                <h2>三、成本與單價分析</h2>
+                <p>為了兼顧品質、市場競爭力與永續理念，我們進行了詳細的成本分析與市場比較。</p>
+                <div class="table-container">
+                    <table>
+                        <caption>產品單位成本分析</caption>
+                        <thead><tr><th>項目</th><th>說明</th><th>預估成本 (NTD)</th></tr></thead>
+                        <tbody>
+                            <tr><td>設計與打樣費</td><td>原創設計、雙面結構打樣 (攤提後)</td><td>$50</td></tr>
+                            <tr><td>物料成本</td><td>環保短毛絨、回收PP棉、繡線、布標</td><td>$150</td></tr>
+                            <tr><td>製造加工費</td><td>裁切、縫紉、電繡、填充、品管</td><td>$120</td></tr>
+                            <tr><td>包裝與文宣</td><td>再生紙盒、故事小卡、感謝卡</td><td>$40</td></tr>
+                            <tr class="total-row"><td><strong>單位生產總成本</strong></td><td></td><td><strong>$360</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-container" style="margin-top: 20px;">
+                    <table>
+                         <caption>市場同類產品比較與定價策略</caption>
+                        <thead><tr><th>比較對象</th><th>特色</th><th>市場售價 (NTD)</th></tr></thead>
+                        <tbody>
+                            <tr><td>一般文創品牌動物抱枕</td><td>單面設計，尺寸中等</td><td>$580 - $780</td></tr>
+                            <tr><td>知名IP授權造型抱枕</td><td>品牌價值高，設計精緻</td><td>$880 - $1,280</td></tr>
+                            <tr><td>募資平台原創設計抱枕</td><td>設計獨特，常有附加價值</td><td>$980 - $1,580</td></tr>
+                            <tr class="total-row"><td><strong>本產品《山林裡的擁抱》</strong></td><td><strong>雙面故事性、環保材質、保育理念</strong></td><td><strong>建議售價：$880</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <article id="value-assessment">
+                <h2>四、總效益與總價值評估</h2>
+                <p>本產品的價值遠超其售價，可從經濟、文化、生態、教育等多個面向進行評估。以下以「月」為單位進行效益估算。</p>
+                <div class="table-container">
+                    <table>
+                        <caption>每月效益評估 (以銷售 200 個為基礎)</caption>
+                        <thead><tr><th>評估面向</th><th>內容說明</th><th>量化價值 (元/月)</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>經濟效益</strong></td><td>營業額：$880 * 200 = $176,000<br>總成本：$360 * 200 = $72,000<br><strong>毛利：$176,000 - $72,000</strong></td><td><strong>$104,000</strong></td></tr>
+                            <tr><td><strong>生態保育效益</strong></td><td>我們承諾將<strong>毛利的10%</strong>捐贈給台灣石虎與黑熊相關保育協會，直接支持棲地研究與巡守工作。</td><td><strong>$10,400</strong></td></tr>
+                            <tr><td><strong>教育推廣效益</strong></td><td>每個抱枕附贈的故事小卡，都在傳遞保育知識。此產品成為200個家庭中的「保育大使」。</td><td rowspan="2">無形價值，是品牌永續經營的核心資產，能深化顧客忠誠度並吸引價值觀相同的消費者。</td></tr>
+                            <tr><td><strong>文化與社會效益</strong></td><td>喚醒公眾對台灣原生動物的情感連結，將保育議題從新聞報導轉化為日常生活中的溫暖陪伴。</td></tr>
+                            <tr class="total-row"><td colspan="2"><strong>總體評估價值 (直接與間接)</strong></td><td><strong>每月創造價值 > $114,400</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+            
+            <article id="conclusion">
+                <h2>五、總結：《師法自然》課程學習心得</h2>
+                <div class="summary">
+                    <p>這學期在《師法自然》這門課中，我看見了很多以前從沒真正去注意過的動植物。以前走在校園裡，大多只是匆匆經過，從沒仔細觀察過身邊的自然環境。但因為課堂上的學習與作業，我開始停下腳步，去看那些原本只會被當背景的樹木、花朵，甚至是地上的小昆蟲，漸漸地，這些原本「無感」的自然事物，開始變得有趣起來。</p>
+                    <p>我也因為課程的關係，實際走訪了一些平常不會特別去的校園角落，發現有些地方其實非常美，只是以前都沒有認真看過。這種「被提醒去看」的感覺，讓我意識到原來自然一直都在，只是我們常常太習慣眼前的景色，忘了停下來欣賞。</p>
+                    <p>另外，在這堂課中老師分享了許多自然觀察的方式，也介紹了很多我們本地特有的物種，讓我對台灣的自然有了更多理解與敬意。學習如何用更謙卑的態度去看待自然，並試著從自然中學習，這是我這學期最大的收穫之一。</p>
+                    <p>總之，《師法自然》這門課不只是帶我接觸自然，更讓我學會如何「重新看見」。這樣的學習方式很特別，也讓我對「學習」有了不同的想像。未來即使課程結束，我也會繼續保有這份觀察與欣賞自然的習慣，因為它真的讓生活變得更豐富。</p>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <p>最終版文創產品企劃報告 | 視覺設計 by AI, 企劃與執行 by [盧楷傑] | 2025</p>
+    </footer>
+
+</body>
+</html>
